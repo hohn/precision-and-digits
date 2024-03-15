@@ -1,0 +1,36 @@
+* Development setup
+  #+BEGIN_SRC sh
+    # Install Python on a mac with homebrew
+    brew install python-tk@3.11
+
+    # Set up the venv 
+    cd ~/w/notes/precision-and-digits
+    python3.11 -m venv .venv
+    . .venv/bin/activate
+
+    # Install packages using requirements.txt ...
+    # python3.11 -m pip install -r requirements.txt
+
+    # ... or install packages directly, for development:
+    pip install --upgrade pip
+    pip install ipython jupyter pyflakes mypy pillow types-Pillow
+
+    # "Install" for local development:
+    # pip install -e .
+
+    # Use the current virtual environment to fix the packages
+    # pip freeze > requirements.txt
+
+    # Occasional typechecking
+    mypy bin/fsmviz-simple
+
+    # Using ipython to develop Tk UI
+    ipython --gui=tk -i -- -g -i
+  #+END_SRC
+
+* Start notebook server
+  #+BEGIN_SRC sh 
+    jupyter notebook
+  #+END_SRC
+
+
