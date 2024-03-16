@@ -28,9 +28,14 @@
     ipython --gui=tk -i -- -g -i
   #+END_SRC
 
-* Start notebook server
+* Miscellaneous
   #+BEGIN_SRC sh 
+    # Start notebook server
     jupyter notebook
+
+    # Convert notebook to org-mode
+    jupyter nbconvert samples-and-digits.ipynb --to markdown
+    pandoc samples-and-digits.md -o samples-and-digits.org
   #+END_SRC
 
 
